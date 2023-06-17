@@ -1,0 +1,3 @@
+
+
+char* removeBreakLine(char* text);
