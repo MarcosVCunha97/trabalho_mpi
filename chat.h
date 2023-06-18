@@ -36,6 +36,7 @@ private:
     void tokenRing();
     int getNextProcess();
     int getPreviousProcess();
+    void testMpi();
     void checkForMessage();
     void waitForMessage();
     void writeNewMessage(char* message, int sender);

@@ -96,7 +96,7 @@ void writeToFile(char *fileName, char *text) {
     if (fs::exists(fileName)) {
         FILE *file = fopen(fileName, "a");
         if(file != NULL){
-            fprintf(file, "\n");
+            // fprintf(file, "\n");
             fprintf(file, "%s", text);
             fclose(file);
         }

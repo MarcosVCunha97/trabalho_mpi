@@ -8,7 +8,8 @@ using namespace std;
 int main(int argc, char **argv){
     int numero, myrank, size;
 
-    MPI_Init (&argc,&argv);
+    // MPI_Init (&argc,&argv);
+    MPI_Init_thread(&argc, &argv, MPI_THREAD_MULTIPLE, &numero);
     MPI_Comm_rank(MPI_COMM_WORLD,&myrank);
     MPI_Comm_size(MPI_COMM_WORLD,&size);
 
