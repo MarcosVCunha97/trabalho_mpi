@@ -17,3 +17,4 @@ char* readFromFile(char *fileName);
 void eraseLastLine(char *fileName);
 char* readLastLine(char *fileName);
 void removeBreakLine(char* text);
+void writeToFile(char *fileName, char *text);

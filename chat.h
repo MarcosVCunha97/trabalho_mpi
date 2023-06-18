@@ -7,7 +7,9 @@
 #include <cstring>
 #include "file_utils.h"
 #include "mpi.h"
-#include<unistd.h>
+#include <unistd.h>
+#include <thread>
+#include <semaphore.h>
 
 
 namespace fs = std::filesystem;
@@ -24,12 +26,17 @@ class Chat {
     string directoryName;
     string chatFileName;
     string inputFileName;
+    sem_t semMpiRcv;
     // std::string fileName[30];
 public:
     Chat(int myRank, int mpiSize);
+    void run();
+private:
     void init();
     void tokenRing();
-private:
     int getNextProcess();
     int getPreviousProcess();
+    void checkForMessage();
+    void waitForMessage();
+    void writeNewMessage(char* message, int sender);
 };
